@@ -163,8 +163,7 @@ def main(config):
 if __name__ == '__main__': 
     model_names = ['kykim/bert-kor-base']
     threshfolds = range(1000,6000,1000)
-    threshfold = 4000
     for model_name in model_names:
-        # for threshfold in threshfolds: /
-        config = define_argparser(model_name , threshfold)
-        main(config)
+        for threshfold in threshfolds: 
+            config = define_argparser(model_name , threshfold)
+            main(config)
